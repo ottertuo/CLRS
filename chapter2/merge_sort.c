@@ -5,8 +5,8 @@
 void merge(int a[], int p, int r, int q) {
     int n1 = r - p + 1;
     int n2 = q - r;
-    int *left = (int *)malloc(sizeof(int) * n1);
-    int *right = (int *)malloc(sizeof(int) * n2);
+    int left[n1];
+    int right[n2];
     for (int i = 0; i < n1; i++) {
         left[i] = a[p + i];
     }
@@ -36,8 +36,6 @@ void merge(int a[], int p, int r, int q) {
         k++;
         j++;
     }
-    free(left);
-    free(right);
 }
 
 void merge_sort(int a[], int p, int q) {
